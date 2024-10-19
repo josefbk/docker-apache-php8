@@ -1,4 +1,4 @@
-FROM php:8.4.0alpha1-apache
+FROM php:8.4.0RC2-apache
 
 RUN apt-get update
 RUN apt-get install mc -y
@@ -25,3 +25,5 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 #https://symfony.com/download
 RUN curl -1sLf 'https://dl.cloudsmith.io/public/symfony/stable/setup.deb.sh' | bash
 RUN apt-get install symfony-cli
+
+RUN a2enmod rewrite
