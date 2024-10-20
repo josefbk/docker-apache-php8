@@ -1,6 +1,9 @@
 FROM php:8.4.0RC2-apache
 
 RUN apt-get update
+
+RUN a2enmod rewrite
+
 RUN apt-get install mc -y
 
 RUN apt-get install -y \
@@ -20,10 +23,10 @@ RUN apt-get install -y \
 
 RUN docker-php-ext-install zip sockets
 
+RUN apt install -y libicu-dev && docker-php-ext-install intl
+
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 #https://symfony.com/download
 RUN curl -1sLf 'https://dl.cloudsmith.io/public/symfony/stable/setup.deb.sh' | bash
 RUN apt-get install symfony-cli
-
-RUN a2enmod rewrite
