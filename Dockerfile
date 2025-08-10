@@ -1,4 +1,4 @@
-FROM php:8.4.7-apache
+FROM php:8.4.11-apache
 
 RUN apt-get update
 
@@ -21,7 +21,8 @@ RUN docker-php-ext-install pdo pdo_mysql #https://github.com/docker-library/php/
 RUN docker-php-ext-install mysqli && docker-php-ext-enable mysqli
 
 RUN apt-get install -y \
-        libzip-dev
+        libzip-dev \
+        cifs-utils
 
 RUN docker-php-ext-install zip sockets
 
