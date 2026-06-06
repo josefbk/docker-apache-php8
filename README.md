@@ -1,11 +1,13 @@
 # docker-apache-php8
 
+https://hub.docker.com/_/php/
+
 https://github.com/josefbk/docker-apache-php8
 
 https://docs.docker.com/desktop/containerd/
 
-    docker build -t josefbk/docker-apache-php8:8.5.2-apache . --platform=linux/amd64,linux/arm64
-    docker push josefbk/docker-apache-php8:8.5.2-apache
+    docker build -t josefbk/docker-apache-php8:8.5.7-apache . --platform=linux/amd64,linux/arm64
+    docker push josefbk/docker-apache-php8:8.5.7-apache
 
-    docker build -t josefbk/docker-apache-php8:8.5.2-apache . --platform=linux/amd64,linux/arm64
+    docker build -t josefbk/docker-apache-php8:8.5.7-apache . --platform=linux/amd64,linux/arm64
     docker push josefbk/docker-apache-php8:latest
