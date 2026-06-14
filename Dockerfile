@@ -11,6 +11,7 @@ RUN apt-get update && \
         libjpeg62-turbo-dev \
         libpng-dev \
         libzip-dev \
+        libpq-dev \
         cifs-utils \
         libicu-dev \
     && docker-php-ext-install -j$(nproc) iconv \
@@ -20,7 +21,7 @@ RUN apt-get update && \
 
 RUN a2enmod rewrite
 
-RUN docker-php-ext-install pdo pdo_mysql #https://github.com/docker-library/php/issues/62
+RUN docker-php-ext-install pdo pdo_mysql pdo_pgsql pgsql #https://github.com/docker-library/php/issues/62
 
 RUN docker-php-ext-install mysqli && docker-php-ext-enable mysqli \
     && docker-php-ext-install zip sockets \
